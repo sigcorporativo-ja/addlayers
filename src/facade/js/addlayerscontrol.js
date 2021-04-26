@@ -197,7 +197,7 @@ export default class AddLayersControl extends M.Control {
           features = this.getImpl().loadKMLLayer(
             this.inputName.value,
             fileReader.result,
-            this.inputStyle.checked
+            this.inputStyle.checked,
           );
           // Se añade llamada a centerFeatures para que centre la capa si el checkbox está activado
           this.centerFeatures(features);
