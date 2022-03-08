@@ -45,6 +45,8 @@ export default class AddLayersControl extends M.impl.Control {
         name: layerName,
         source: newSource,
       });
+      // compatibilidad con managelayers
+      layer.options.origen = 'Local';
       layer.on(M.evt.LOAD, () => {
         resolve(layer.getFeatures());
       });
@@ -111,6 +113,10 @@ export default class AddLayersControl extends M.impl.Control {
       }, {
         displayInLayerSwitcher: true,
       });
+      // compatibilidad con managelayers
+      layer.options = {
+        origen: 'Local',
+      };
       layer.addFeatures(features);
       // layer.options.origen = 'Local';
 
@@ -137,8 +143,11 @@ export default class AddLayersControl extends M.impl.Control {
     }, {
       displayInLayerSwitcher: true,
     });
+    // compatibilidad con managelayers
+    layer.options = {
+      origen: 'Local',
+    };
     layer.addFeatures(features);
-    // layer.options.origen = 'Local';
     this.facadeMap.addLayers(layer);
   }
 
