@@ -1,0 +1,5 @@
+# Ignored files
+
+node_modules/
+/src/index.js
+package-lock.json

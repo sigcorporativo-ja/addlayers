@@ -14,12 +14,6 @@ export default class AddLayersControl extends M.impl.Control {
   addTo(map, html) {
     this.facadeMap = map;
     this.element = html;
-    const olMap = map.getMapImpl();
-    ol.control.Control.call(this, {
-      element: html,
-      target: null,
-    });
-    olMap.addControl(this);
 
     super.addTo(map, html);
   }
